@@ -1,0 +1,16 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "week 1 assignment for class CSE 341",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongodb": "^6.12.0"
+  }
+}
