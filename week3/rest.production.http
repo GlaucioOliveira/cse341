@@ -1,0 +1,46 @@
+
+@host = localhost:8080
+@protocol = https
+@resource = contacts
+
+### List all @resource added.
+GET {{protocol}}://{{host}}/{{resource}}
+
+
+### Create a new @resource
+# @name create_resource
+POST {{protocol}}://{{host}}/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Melissa",
+    "lastName":"Oliveira",
+    "email":"melissa.oliveira@test.com",
+    "favoriteColor":"Pink",
+    "birthday":"04/15/1994"
+}
+
+###
+
+@insertedId = {{create_resource.response.body.insertedId}}
+
+###
+
+### Get the added resource
+GET {{protocol}}://{{host}}/{{resource}}/{{insertedId}}
+
+
+### Updating the added resource
+PUT {{protocol}}://{{host}}/{{resource}}/{{insertedId}} HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Melissa",
+    "lastName":"Torquato Oliveira",
+    "email":"melissa.oliveira@gmail.com",
+    "favoriteColor":"Pink",
+    "birthday":"04/11/1994"
+}
+
+### DELETE the added resource
+DELETE {{protocol}}://{{host}}/{{resource}}/{{insertedId}} HTTP/1.1
