@@ -30,6 +30,18 @@ const createContact = async (request, response) => {
     favoriteColor: request.body.favoriteColor,
     birthday: request.body.birthday
   };
+
+  if (
+    !contact.firstName ||
+    !contact.lastName ||
+    !contact.email ||
+    !contact.favoriteColor ||
+    !contact.birthday
+  ) {
+    response.status(400).json('Please provide all required fields.');
+    return;
+  }
+
   const dbResponse = await mongoCollection().insertOne(contact);
   if (dbResponse.acknowledged) {
     response.status(201).json(dbResponse);
@@ -42,7 +54,7 @@ const createContact = async (request, response) => {
 
 const updateContact = async (request, response) => {
   const userId = new ObjectId(request.params.id);
-  // be aware of updateOne if you only want to update specific fields
+
   const contact = {
     firstName: request.body.firstName,
     lastName: request.body.lastName,
@@ -63,10 +75,18 @@ const updateContact = async (request, response) => {
 
 const deleteContact = async (request, response) => {
   const userId = new ObjectId(request.params.id);
-  const dbResponse = await mongoCollection().deleteOne({ _id: userId }, true);
+
+  const dbResponse = await mongoCollection().deleteOne(
+    {
+      _id: userId
+    },
+    true
+  );
+
   console.log(dbResponse);
+
   if (dbResponse.deletedCount > 0) {
-    response.status(204).send();
+    response.status(200).send();
   } else {
     response
       .status(500)

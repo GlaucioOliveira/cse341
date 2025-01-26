@@ -13,7 +13,7 @@ POST {{protocol}}://{{host}}/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Melissa",
+    "firstName":"Milena",
     "lastName":"Oliveira",
     "email":"melissa.oliveira@test.com",
     "favoriteColor":"Pink",
@@ -35,9 +35,9 @@ PUT {{protocol}}://{{host}}/{{resource}}/{{insertedId}} HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Melissa",
+    "firstName":"Milena",
     "lastName":"Torquato Oliveira",
-    "email":"melissa.oliveira@gmail.com",
+    "email":"milena.oliveira@gmail.com",
     "favoriteColor":"Pink",
     "birthday":"04/11/1994"
 }

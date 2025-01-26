@@ -5,7 +5,6 @@ const MongoClient = require('mongodb').MongoClient;
 //private fields
 let _databaseClient;
 
-
 const initializeDatabaseClient = (callback) => {
   if (_databaseClient) {
     console.log('_databaseClient is already initialized!');
@@ -20,7 +19,7 @@ const initializeDatabaseClient = (callback) => {
     .catch((error) => callback(error));
 };
 
-const getDatabaseClient = ()  => {
+const getDatabaseClient = () => {
   if (!_databaseClient) throw Error('databaseClient not initialized');
 
   return _databaseClient;
