@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'Contacts API Information',
   },
-  host: 'localhost:8080'
+  host: 'https://cse341-fetp.onrender.com'
 };
 
 const outputFile = './swagger-output.json';
