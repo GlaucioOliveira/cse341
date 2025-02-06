@@ -1,0 +1,7 @@
+### List all playlists
+GET https://localhost:8080/playlists
+
+###
+
+### Get playlist by id
+GET https://localhost:8080/playlists/67a43c103f04a11140235598
