@@ -1,0 +1,6 @@
+### List all contacts.
+GET https://cse341-fetp.onrender.com/contacts
+
+
+### Get Contact By Id
+GET https://cse341-fetp.onrender.com/contacts/679b1093ca3794a93e25cdbb
